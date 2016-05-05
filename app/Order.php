@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * App\Order
  *
- * @mixin \Eloquent
  * @property integer $id
  * @property string $name
  * @property string $stu_num
@@ -36,8 +35,26 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Query\Builder|\App\Order whereEndTime($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Order whereCreatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Order whereUpdatedAt($value)
+ * @mixin \Eloquent
  */
 class Order extends Model
 {
     //
+    static public function AddNewOrder($arr){
+        $newOrder = new Order();
+        $newOrder->name = $arr['name'];
+        $newOrder->stu_num = $arr['stu_num'];
+        $newOrder->phone_num = $arr['phone_num'];
+        $newOrder->location = $arr['location'];
+        $newOrder->if_errands = $arr['if_errands'];
+        $newOrder->description = $arr['description'];
+        $newOrder->if_completed = false;
+        $newOrder->if_allocated = false;
+        $newOrder->appointment_date = $arr['appointment_date'];
+        $newOrder->start_time = $arr['start_time'];
+        $newOrder->end_time = $arr['end_time'];
+        $newOrder->save();
+        return $newOrder;
+    }
+    
 }

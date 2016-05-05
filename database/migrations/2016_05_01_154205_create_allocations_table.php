@@ -14,7 +14,7 @@ class CreateAllocationsTable extends Migration
     {
         Schema::create('allocations', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->integer('staff_id');
             $table->integer('duty_day');
             $table->integer('order_id');
             $table->boolean('if_completed');

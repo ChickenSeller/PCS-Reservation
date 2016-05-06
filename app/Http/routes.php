@@ -10,37 +10,27 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+Route::get('/order_info', function () {
+    // return view('index');
+    return view('order_info');
+});
 
 Route::get('/', function () {
+    // return view('index');
     return view('welcome');
 });
-/*
-Route:;get('reg',function(){
-   $data = array();
-    $data['name']= \Illuminate\Support\Facades\Input::get('name');
-    $data['email'] =  \Illuminate\Support\Facades\Input::get('email');
-    $data['password'] = \Illuminate\Support\Facades\Input::get('password');
-    Auth
+
+Route::get('/admin', function () {
+    // return view('index');
+    return view('dashboard');
 });
-*/
 
-//Route::auth();
-//Route::auth();
-
-Route::get('login', 'Auth\AuthController@getLogin');
-Route::post('login', 'AuthenticateController@Login');
-Route::get('logout', 'AuthenticateController@Logout');
-Route::get('register', 'Auth\AuthController@showRegistrationForm');
-Route::post('register', 'Auth\AuthController@register');
-
-// Password Reset Routes...
-Route::get('password/reset/{token?}', 'Auth\PasswordController@showResetForm');
-Route::post('password/email', 'Auth\PasswordController@sendResetLinkEmail');
-Route::post('password/reset', 'Auth\PasswordController@reset');
-Route::get('/home', 'HomeController@index');
-Route::get('/test',function (){
-    return \Auth::user();
+Route::get('/form', function () {
+    return view('index');
+    //return view('welcome');
 });
-Route::controller('/','OrderController');
 
-
+Route::get('/login', function () {
+    return view('login');
+    //return view('welcome');
+});

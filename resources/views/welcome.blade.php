@@ -1,17 +1,21 @@
-@extends('layouts.app')
+@extends('layouts.base')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <div class="panel panel-default">
-                <div class="panel-heading">Welcome</div>
-
-                <div class="panel-body">
-                    Your Application's Landing Page.
-                </div>
+    <div class="content">
+        <div class="inner">
+            <div id="logo">
+                <span id="icon"></span>
             </div>
+            <h2>PC SERVICE FOR <br/>XXX</h2>     
+            <p>
+                we are xxxxxx. <br/>and provide xxxx for xxx.
+
+            </p>
         </div>
+        
+        <button class="btn Tbutton">xxxxx</button>
+        
+
     </div>
-</div>
-@endsection
+@stop
+

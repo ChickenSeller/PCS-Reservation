@@ -39,7 +39,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Order extends Model
 {
-    //
+
     static public function AddNewOrder($arr){
         $newOrder = new Order();
         $newOrder->name = $arr['name'];

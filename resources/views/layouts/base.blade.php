@@ -11,6 +11,13 @@
         <!---->
         <link href="/css/style.css" rel = "stylesheet">
         <link href="/css/font.css" rel="stylesheet">
+        <style>
+            input[type=number]::-webkit-inner-spin-button,
+            input[type=number]::-webkit-outer-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+        </style>
     </head>
     <body>
         <nav class="navbar navbar-default alt" id="header">

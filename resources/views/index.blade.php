@@ -5,33 +5,22 @@
 		<h2>XXXXX</h2> 
 
 		<div class="inner">
-			<form class="index-form">	
-				<div class="input-group">
-					<input type="text" id="name" class="form-control" placeholder="姓名" required>
-					<input type="text" id="student_id" class="form-control" placeholder="ID" required>
-					<input type="text" id="phone_number" class="form-control" placeholder="Tel" required>
-                    <select type="button" class="btn btn-default" id = "type" name="type" required="true">
-                        <option value="" selected="selected" disabled>---选择服务方式---</option>
-                        <option value="indoor">值班</option>
-                        <option value="outdoor">上门服务</option>
-                    </select>
-
-                    <input type="text" id="place" class="form-control hidden" placeholder="地点">
+            {!! Form::open(array('class'=>'index-form')) !!}
+				<div class="input-group" style="width: 100%">
+                    {!! Form::text('name','',array('class'=>'form-control','placeholder'=>'姓名','required'=>'')) !!}
+                    {!! Form::number('stu_num','',array('class'=>'form-control','placeholder'=>'学号','required'=>'')) !!}
+                    {!! Form::number('phone_num','',array('class'=>'form-control','placeholder'=>'手机号','required'=>'')) !!}
+                    {!! Form::select('type',array('indoor'=>'值班','outdoor'=>'上门服务'),null,array('placeholder'=>'---选择服务方式--','required'=>'true','id'=>'type','class'=>'btn btn-default','type'=>'button')) !!}
+                    {!! Form::text('place',null,array('placeholder'=>'地点','class'=>'form-control hidden','id'=>'place')) !!}
                     <!-- 路由or台式机问题 -->
-                    <select type="button" class="btn btn-default hidden" id="indoorType" name="indoorType">
-                        <option value="" selected="selected" disabled>---选择问题类型---</option>
-                        <option value="xxx">XXX-1</option>
-                        <option value="xxx">XXX-2</option>
-                    </select>                    
+
+                    {!! Form::select('indoorType',array('router'=>'路由器问题','pc'=>'电脑问题'),null,array('placeholder'=>'---选择问题类型---','required'=>'true','id'=>'indoorType','class'=>'btn btn-default','type'=>'button')) !!}
+
 
                     <!-- 问题选择  值班和台式机的问题放在一起了  选项动态生成-->
-                    <select type="button" class="btn btn-default" id="problem" name="problem" required="true">
-                        <option value="" selected="selected" disabled>---选择问题简述---</option>
-                        <option value="xxx">problem-1</option>
-                        <option value="other">其他</option>
-                    </select>          
+                    {!! Form::select('problem',array('xxx'=>'problem-1','other'=>'其他'),null,array('placeholder'=>'---选择问题简述---','required'=>'true','id'=>'problem','class'=>'btn btn-default','type'=>'button')) !!}
 
-                    <input type="text" id="other-problem" class="form-control hidden" placeholder="problem description">
+                    {!! Form::text('other-problem',null,array('placeholder'=>'problem description','class'=>'form-control hidden','id'=>'other-problem')) !!}
 
 
                     <!-- available time -->
@@ -44,7 +33,7 @@
 
 				<button class="btn btn-lg btn-primary btn-block" id="order" type="submit">预约</button>
 				
-			</form>
+			{!! Form::close() !!}
 		</div>
 	</div>
 

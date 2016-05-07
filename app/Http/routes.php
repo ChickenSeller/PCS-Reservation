@@ -29,6 +29,9 @@ Route:;get('reg',function(){
 Route::get('dashboard',function(){
    return view('dashboard');
 });
+Route::get('form',function(){
+    return view('index');
+});
 Route::get('login', 'Auth\AuthController@getLogin');
 Route::post('login', 'AuthenticateController@Login');
 Route::get('logout', 'AuthenticateController@Logout');

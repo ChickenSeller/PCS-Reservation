@@ -10,7 +10,6 @@
                     <input type="text" id="username" class="form-control" placeholder="帐号" required>
                     <input type="text" id="password" class="form-control" placeholder="密码" required>
                 </div>
-
                 <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
             </form>        
         </div>

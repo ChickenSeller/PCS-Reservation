@@ -14,10 +14,10 @@ class CreateAllocationsTable extends Migration
     {
         Schema::create('allocations', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('staff_id');
-            $table->integer('duty_day');
-            $table->integer('order_id');
-            $table->boolean('if_completed');
+            $table->integer('staff_id');//PCS成员ID
+            $table->integer('duty_day');//任务日期
+            $table->integer('order_id');//对应的任务号
+            $table->boolean('if_completed');//是否完成
             $table->timestamps();
         });
     }

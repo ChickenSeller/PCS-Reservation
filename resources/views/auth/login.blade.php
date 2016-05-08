@@ -6,7 +6,7 @@
         <div class="inner">
             {!! Form::open(array('url'=>'login','method'=>'post'))  !!}
                 <h1 class="content-heading">Admin Login</h1>
-                <div class="input-group" style="width: 100%">
+                <div class="input-group">
                     {!! Form::text('name',"",array('class'=>'form-control','placeholder'=>'账号','required'=>'')) !!}
                     {!! Form::password('password',array('class'=>'form-control','placeholder'=>'密码','required'=>'')) !!}
                 </div>

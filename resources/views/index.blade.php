@@ -6,7 +6,7 @@
 
 		<div class="inner">
             {!! Form::open(array('class'=>'index-form')) !!}
-				<div class="input-group" style="width: 100%">
+				<div class="input-group">
                     {!! Form::text('name','',array('class'=>'form-control','placeholder'=>'姓名','required'=>'')) !!}
                     {!! Form::number('stu_num','',array('class'=>'form-control','placeholder'=>'学号','required'=>'')) !!}
                     {!! Form::number('phone_num','',array('class'=>'form-control','placeholder'=>'手机号','required'=>'')) !!}

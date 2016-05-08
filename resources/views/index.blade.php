@@ -10,20 +10,26 @@
                     {!! Form::text('name','',array('class'=>'form-control','placeholder'=>'姓名','required'=>'')) !!}
                     {!! Form::number('stu_num','',array('class'=>'form-control','placeholder'=>'学号','required'=>'')) !!}
                     {!! Form::number('phone_num','',array('class'=>'form-control','placeholder'=>'手机号','required'=>'')) !!}
-                    {!! Form::select('type',array('indoor'=>'值班','outdoor'=>'上门服务'),null,array('placeholder'=>'---选择服务方式--','required'=>'true','id'=>'type','class'=>'btn btn-default','type'=>'button')) !!}
-                    {!! Form::text('place',null,array('placeholder'=>'地点','class'=>'form-control hidden','id'=>'place')) !!}
+                    {!! Form::select('if_errands',array('indoor'=>'值班','outdoor'=>'上门服务'),null,array('placeholder'=>'---选择服务方式--','required'=>'true','id'=>'type','class'=>'btn btn-default','type'=>'button')) !!}
+                    {!! Form::text('location',null,array('placeholder'=>'地点','class'=>'form-control hidden','id'=>'place')) !!}
                     <!-- 路由or台式机问题 -->
 
                     {!! Form::select('indoorType',array('router'=>'路由器问题','pc'=>'电脑问题'),null,array('placeholder'=>'---选择问题类型---','required'=>'true','id'=>'indoorType','class'=>'btn btn-default','type'=>'button')) !!}
 
 
                     <!-- 问题选择  值班和台式机的问题放在一起了  选项动态生成-->
-                    {!! Form::select('problem',array('xxx'=>'problem-1','other'=>'其他'),null,array('placeholder'=>'---选择问题简述---','required'=>'true','id'=>'problem','class'=>'btn btn-default','type'=>'button')) !!}
+                    {!! Form::select('description',array('xxx'=>'problem-1','other'=>'其他'),null,array('placeholder'=>'---选择问题简述---','required'=>'true','id'=>'problem','class'=>'btn btn-default','type'=>'button')) !!}
 
-                    {!! Form::text('other-problem',null,array('placeholder'=>'problem description','class'=>'form-control hidden','id'=>'other-problem')) !!}
+                    {!! Form::text('description-other',null,array('placeholder'=>'problem description','class'=>'form-control hidden','id'=>'other-problem')) !!}
 
 
                     <!-- available time -->
+                    <select type="button" class="btn btn-default" name="appointment_date" required="true">
+                        <option value="" selected="selected" disabled>---选择服务时间---</option>
+                        <option value="xx">time-1</option>
+                        <option value="xx">time-2</option>
+                    </select>
+
                     <select type="button" class="btn btn-default" name="time" required="true">
                         <option value="" selected="selected" disabled>---选择服务时间---</option>
                         <option value="xx">time-1</option>

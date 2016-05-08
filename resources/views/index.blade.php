@@ -7,29 +7,34 @@
 		<div class="inner">
             {!! Form::open(array('class'=>'index-form')) !!}
 				<div class="input-group">
+                    <!-- student name -->
                     {!! Form::text('name','',array('class'=>'form-control','placeholder'=>'姓名','required'=>'')) !!}
+                    <!-- student ID number -->
                     {!! Form::number('stu_num','',array('class'=>'form-control','placeholder'=>'学号','required'=>'')) !!}
+                    <!-- student phone number -->
                     {!! Form::number('phone_num','',array('class'=>'form-control','placeholder'=>'手机号','required'=>'')) !!}
+                    <!-- 是否出勤 -->
                     {!! Form::select('if_errands',array('indoor'=>'值班','outdoor'=>'上门服务'),null,array('placeholder'=>'---选择服务方式--','required'=>'true','id'=>'type','class'=>'btn btn-default','type'=>'button')) !!}
+                    <!-- 出勤地点 -->
                     {!! Form::text('location',null,array('placeholder'=>'地点','class'=>'form-control hidden','id'=>'place')) !!}
-                    <!-- 路由or台式机问题 -->
-
+                    
+                    <!--如果是出勤，选择问题类型, 路由or台式机问题 -->
                     {!! Form::select('indoorType',array('router'=>'路由器问题','pc'=>'电脑问题'),null,array('placeholder'=>'---选择问题类型---','required'=>'true','id'=>'indoorType','class'=>'btn btn-default','type'=>'button')) !!}
 
 
-                    <!-- 问题选择  值班和台式机的问题放在一起了  选项动态生成-->
+                    <!-- 问题选择  值班和出勤的问题放在一起了  选项从数据库获得-->
                     {!! Form::select('description',array('xxx'=>'problem-1','other'=>'其他'),null,array('placeholder'=>'---选择问题简述---','required'=>'true','id'=>'problem','class'=>'btn btn-default','type'=>'button')) !!}
-
+                    <!-- 其他问题-->
                     {!! Form::text('description-other',null,array('placeholder'=>'problem description','class'=>'form-control hidden','id'=>'other-problem')) !!}
 
-
-                    <!-- available time -->
+                    <!-- 具体可选时间从数据库里获得 -->
+                    <!-- available time  -->
                     <select type="button" class="btn btn-default" name="appointment_date" required="true">
-                        <option value="" selected="selected" disabled>---选择服务时间---</option>
+                        <option value="" selected="selected" disabled>---选择服务日期---</option>
                         <option value="xx">time-1</option>
                         <option value="xx">time-2</option>
                     </select>
-
+                    <!-- 数据库是start-time 和end_time, 这里是一个时间段选择，分两个选也可以 -->
                     <select type="button" class="btn btn-default" name="time" required="true">
                         <option value="" selected="selected" disabled>---选择服务时间---</option>
                         <option value="xx">time-1</option>
@@ -43,7 +48,8 @@
 		</div>
 	</div>
 
-    <div id="order-info">
+    
+    <!-- <div id="order-info">
         <div class="inner">
             <h2>服务单</h2>
             <ul class="links">
@@ -53,7 +59,7 @@
             </ul>
             <a href="#" class="close">Close</a>
         </div>
-    </div>
+    </div> -->
 @stop
 
 

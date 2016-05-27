@@ -18,6 +18,12 @@ body {
   margin: 40px 0px;
   font-family: 'Lato';
 }
+.time-slot-busy {
+  color: #F75000 !important;
+}
+.time-slot-good {
+  color: #82D900 !important;
+}
 .hidden {
   display: none !important;
 }

@@ -29,16 +29,18 @@
 
                     <!-- 具体可选时间从数据库里获得 -->
                     <!-- available time  -->
+                    
                     <select type="button" class="btn btn-default" name="appointment_date" required="true">
                         <option value="" selected="selected" disabled>---选择服务日期---</option>
                         <option value="xx">time-1</option>
                         <option value="xx">time-2</option>
                     </select>
+                    
                     <!-- 数据库是start-time 和end_time, 这里是一个时间段选择，分两个选也可以 -->
                     <select type="button" class="btn btn-default" name="time" required="true">
                         <option value="" selected="selected" disabled>---选择服务时间---</option>
-                        <option value="xx">time-1</option>
-                        <option value="xx">time-2</option>
+                        <option value="xx" class="time-slot-busy">time-1(繁忙)</option>
+                        <option value="xx" class="time-slot-good">time-2(空闲)</option>
                     </select>
 				</div>
 
